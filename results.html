@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .result-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: #fff;
+        }
+        .result-box h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .result-box h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .result-box p {
+            font-size: 1.2em;
+        }
+        .result-box .gpa {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1 id="greeting"></h1>
+        <h2>Your average is</h2>
+        <div class="gpa" id="gpa"></div>
+        <p id="interpretation"></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const result = JSON.parse(localStorage.getItem('gpaResult'));
+            if (result) {
+                document.getElementById('greeting').textContent = `Hello ${result.name} from ${result.gradeSection}.`;
+                document.getElementById('gpa').textContent = result.average.toFixed(2);
+                document.getElementById('interpretation').textContent = `You are ${result.interpretation}!!`;
+            }
+        });
+    </script>
+</body>
+  </html>
