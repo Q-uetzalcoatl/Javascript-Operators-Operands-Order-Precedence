@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .container h1 {
+            text-align: center;
+        }
+        .container table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .container table th, .container table td {
+            padding: 8px;
+            text-align: left;
+        }
+        .container input[type="text"], .container input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GPA Calculator</h1>
+        <form id="gpaForm">
+            <div>
+                <label for="name">Enter your name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="gradeSection">Grade and Section:</label>
+                <input type="text" id="gradeSection" required>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade (1-5)</th>
+                    </tr>
+                </thead>
+                <tbody id="subjects">
+                    <tr>
+                        <td><input type="text" required></td>
+                        <td><input type="number" min="1" max="5" step="0.01" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" required></td>
+                        <td><input type="number" min="1" max="5" step="0.01" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" required></td>
+                        <td><input type="number" min="1" max="5" step="0.01" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" required></td>
+                        <td><input type="number" min="1" max="5" step="0.01" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" required></td>
+                        <td><input type="number" min="1" max="5" step="0.01" required></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" onclick="calculateGPA()">Calculate GPA</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
